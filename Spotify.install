@@ -1,0 +1,3 @@
+yay -S polybar-spotify-module
+systemctl ​​ --user enable spotify-listener
+systemctl ​​--user start spotify-listener​​
