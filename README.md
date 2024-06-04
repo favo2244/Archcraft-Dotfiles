@@ -5,7 +5,14 @@ Installier Archcraft von diesem [Link](https://archcraft.io/) und boote Iso-Date
 
 Wenn Archcraft gebootet hat, wähle `Launch Calamaries` und folge den Anweisungen.
 
-Wenn Archcraft fertig installiert ist, aktualisiere die Pacman-Bib mit `sudo pacman -Syu`
+Wenn Archcraft fertig installiert ist, führe folgenden Kommandos aus:
+```
+sudo pacman -Syyu
+sudo pacman -S debugedit
+sudo pacman -S archlinux-keyring
+sudo pacman-key --init
+sudo pacman-key --populate
+```
 
 ## Configuration
 
