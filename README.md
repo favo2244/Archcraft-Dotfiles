@@ -16,4 +16,48 @@ sudo pacman-key --populate
 
 ## Configuration
 
-Um Spotify in der Polybar hinzuzufügen, führe `Spotify.install` aus. Die NeoVim Konfiguration liegt in [diesem Ordner](LINK), für genauere Anweisungen siehe [NeoVim Upstream](https://github.com/benbrastmckie/.config) oder das [eigene Repository](https://github.com/favo2244/NVIM_Config))
+### Spotify
+
+Um Spotify in der Polybar hinzuzufügen:
+```
+sudo pacman -S playerctl
+sudo pacman -S python-pip
+pip install setuptools --break-system-packages
+yay -S zscroll-git
+yay -S spotify
+```
+Füge `get_spotiyfy_status.sh` und `scroll_spotiyfy_status.sh` in `~/.config/polybar/scripts` ein.
+Anschließend füge folgendes zu deiner Polybar config.ini im jeweiligen Themes Ordern von Openbox zu:
+```ini
+[module/spotify]
+type = custom/script
+tail = true
+interval = 1
+; prefix symbol is shown before the text
+format-prefix = "<prefix-symbol>"
+format = <label>
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "<previous-song-symbol>"
+format = <label>
+click-left = playerctl previous -p spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo "<playing-symbol>"
+hook-1 = echo "<pause-symbol>"
+initial = 1
+click-left = playerctl play-pause -p spotify
+
+[module/spotify-next]
+type = custom/script
+exec = echo "next-song-symbol"
+format = <label>
+click-left = playerctl next -p spotify
+```
+
+### NeoVim
+
+Die NeoVim Konfiguration liegt in [diesem Ordner](LINK), für genauere Anweisungen siehe [NeoVim Upstream](https://github.com/benbrastmckie/.config) oder das [eigene Repository](https://github.com/favo2244/NVIM_Config))
