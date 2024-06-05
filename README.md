@@ -60,4 +60,4 @@ click-left = playerctl next -p spotify
 
 ### NeoVim
 
-Die NeoVim Konfiguration liegt in [diesem Ordner](LINK), für genauere Anweisungen siehe [NeoVim Upstream](https://github.com/benbrastmckie/.config) oder das [eigene Repository](https://github.com/favo2244/NVIM_Config))
+Die NeoVim Konfiguration liegt in [diesem Ordner](LINK), für genauere Anweisungen siehe [NeoVim.config Repository](https://github.com/favo2244/NVIM_Config) (oder den [NeoVim Upstream](https://github.com/benbrastmckie/.config)).
