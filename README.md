@@ -26,6 +26,17 @@ sudo pacman -S gimp
 
 ## Configuration
 
+### Git
+Zur Git-Konfiguration:
+```
+git config --global user.name "Name"
+git config --global user.email "Email"
+```
+Um ein Push oder Pull per SSH auszuführen, muss zuerst ein SSH-Key generiert und angegeben werden.
+
+`ssh-keygen -t ed25519 -C "your_email@example.com"` generiert einen neuen SSH-Key (Datei kann default bleiben und Passwort kann leer bleiben). Starte den SSH-Agent mit `eval "$(ssh-agent -s)"` um den Key mittels `ssh-add ~/.ssh/id_ed25519` hinzuzufügen (Hinweis: Beim Generieren und Hinzufügen muss logischerweise der gleiche Name verwendet werden, hier `ed25519`).
+Um den Key nun in GitHub hinzuzufügen, muss der gesamte Inhalt der Datei `~/.ssh/id_ed25519.pub` kopiert werden. Anschließend erstelle in GitHub, unter Einstellungen -> SSH und GPG Keys einen neuen SSH-Key und füge unter Key den kopierten Inhalt ein. Klicke auf `Add Key`.
+
 ### Spotify
 
 Um Spotify in der Polybar hinzuzufügen:
